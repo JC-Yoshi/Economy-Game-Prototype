@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 1100151588865876043}
   - component: {fileID: 1100151588865876042}
   - component: {fileID: 1100151588865876037}
+  - component: {fileID: 4513986279781668300}
   m_Layer: 5
   m_Name: Route
   m_TagString: Untagged
@@ -227,6 +228,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
+--- !u!225 &4513986279781668300
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100151588865876039}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1100151590055722945
 GameObject:
   m_ObjectHideFlags: 0
