@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SpawnRoute : MonoBehaviour
 {
    // public Text budgetText;
-   // public GameObject RoutePurchaseButton;
+    public GameObject RouteManager;
     public GameObject RouteCard;
 
 
@@ -23,9 +23,14 @@ public class SpawnRoute : MonoBehaviour
 
     public void Click()
     {
-        Instantiate(RouteCard, new Vector2 ( -582, 292), Quaternion.identity);
+
+        Instantiate(RouteCard, RouteManager.transform);
+
+
+        /* GameObject Routecard = Instantiate(RouteCard, new Vector2 ( 0, 0), Quaternion.identity) as GameObject;
         RouteCard.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-        Debug.Log("Spawned Route");
+        Debug.Log("Spawned RouteCard");
+        */
     }
   
 }
