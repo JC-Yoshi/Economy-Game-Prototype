@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
-using System;
-using TMPro;
+using UnityEngine.UI;
 
 public class TramWayGame : MonoBehaviour
 {
-    public TMP_Text budgetText;
+    public Text budgetText;
     public double budget;
+
+
+    private float timeRemaining;
+    private float timerMax;
+    public Slider slider;
 
     public void Start()
     {
@@ -16,7 +21,34 @@ public class TramWayGame : MonoBehaviour
 
     public void Update()
     {
+        //bugdet text
         budgetText.text = "Budget: " + budget;
+
+        //timer
+        slider.value = CalculateSliderValue();
+
+        if (timeRemaining <= 0)
+        {
+            timeRemaining = 0;
+        }
+
+        else if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime;
+        }
+    }
+
+    float CalculateSliderValue()
+    {
+        return (timeRemaining / timerMax);
+    }
+
+    public void Click()
+    {
+        if (timeRemaining < 0)
+        {
+            timerMax = 5f;
+        }
     }
 }
     
