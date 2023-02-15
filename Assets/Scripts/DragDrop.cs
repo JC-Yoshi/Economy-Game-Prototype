@@ -7,17 +7,18 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
-    {
+{
 
-    [SerializeField] private Canvas Canvas;
+    private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        
-    }
+        //canvas = PlayerUI.Find("Canvas").GetComponenet<canvas>;
+                 
+    } 
 
     public void OnBeginDrag(PointerEventData eventData) 
     {
@@ -28,7 +29,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnDrag(PointerEventData eventData) 
     {
-        rectTransform.anchoredPosition += eventData.delta / Canvas.scaleFactor;
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
         
     }
 
