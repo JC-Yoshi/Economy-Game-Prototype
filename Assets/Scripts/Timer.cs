@@ -48,7 +48,7 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void Click()
+    public void RouteClick()
     {
              
         running = true;
@@ -59,14 +59,15 @@ public class Timer : MonoBehaviour
         return (timeRemaining / TimerMax);
     }
 
-    public void Manager()
+    public void OnManagerClick()
     {
+        !manager = manager;
 
-        if(manager = true)
+        if (manager == true)
         {
-            Click();
+            RouteClick();
         }
-        
+
     }
 
 }
