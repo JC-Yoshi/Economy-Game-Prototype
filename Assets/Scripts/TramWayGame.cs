@@ -2,26 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TramWayGame : MonoBehaviour
 {
-    public Text budgetText;
-    public double budget;
+    public Text BudgetText;
+    public double initialbudget = 140;
+   // public double currentbudget;
 
     
     public void Start()
     {
-        budget = 100;
+        
     }
 
     public void Update()
     {
-        //bugdet text
-        budgetText.text = "Budget: " + budget;
+        BudgetText.text = "Budget: " + initialbudget.ToString();
 
-        
     }
 
 

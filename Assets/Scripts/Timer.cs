@@ -6,32 +6,43 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private float timeRemaining;
-    private float timerMax = 5f;
-    public Slider slider;
-    public State timerComplete;
+    [SerializeField] private float timeRemaining;
+    [SerializeField] private float TimerMax;
+    [SerializeField] private Slider slider;
+    private State timerComplete;
 
+    [SerializeField] TramWayGame gameManager;
 
+    public Text BudgetText;
+    public double money;
+    public bool running = false;
+
+    public bool manager = false;
+
+    public void Start()
+    {
+        timeRemaining = TimerMax;
+    }
     public void Update()
     {
         //timer
-
         slider.value = CalculateSliderValue();
 
         if (timeRemaining <= 0)
         {
-            timeRemaining = 0;
-            //State timercomplete = true;
-            
-            
+            money = 20;
+            gameManager.initialbudget += money;
+            running = false;
+            timeRemaining = TimerMax;
         }
-
+              
         if (timeRemaining < 0)
         {
-            timerMax = 5f;
+            timeRemaining = TimerMax;
+           
         }
 
-        else if (timeRemaining > 0)
+       if (running == true)
         {
             timeRemaining -= Time.deltaTime;
         }
@@ -39,12 +50,23 @@ public class Timer : MonoBehaviour
 
     public void Click()
     {
-        timeRemaining = timerMax;
+             
+        running = true;
     }
 
     float CalculateSliderValue()
     {
-        return (timeRemaining / timerMax);
+        return (timeRemaining / TimerMax);
+    }
+
+    public void Manager()
+    {
+
+        if(manager = true)
+        {
+            Click();
+        }
+        
     }
 
 }
