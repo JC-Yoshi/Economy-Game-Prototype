@@ -30,10 +30,15 @@ public class Timer : MonoBehaviour
 
         if (timeRemaining <= 0)
         {
+            
             money = 20;
             gameManager.initialbudget += money;
             running = false;
             timeRemaining = TimerMax;
+            if (manager == true)
+            {
+                RouteClick();
+            }
         }
               
         if (timeRemaining < 0)
@@ -50,7 +55,6 @@ public class Timer : MonoBehaviour
 
     public void RouteClick()
     {
-             
         running = true;
     }
 
@@ -61,12 +65,7 @@ public class Timer : MonoBehaviour
 
     public void OnManagerClick()
     {
-        !manager = manager;
-
-        if (manager == true)
-        {
-            RouteClick();
-        }
+        manager = true;
 
     }
 
