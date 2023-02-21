@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private float timeRemaining;
+    [SerializeField] public float timeRemaining;
     [SerializeField] private float TimerMax;
     [SerializeField] private Slider slider;
-    private State timerComplete;
+    //private State timerComplete;
 
     [SerializeField] TramWayGame gameManager;
 
