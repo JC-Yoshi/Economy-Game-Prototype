@@ -14,10 +14,12 @@ public class Timer : MonoBehaviour
     [SerializeField] TramWayGame gameManager;
 
     public Text BudgetText;
-    public double money;
+    [SerializeField] double money;
+    [SerializeField] double moneyformanager;
+    [SerializeField] double moneyfordriver;
     public bool running = false;
-
     public bool manager = false;
+
 
     public void Start()
     {
@@ -31,13 +33,16 @@ public class Timer : MonoBehaviour
         if (timeRemaining <= 0)
         {
             
-            money = 20;
             gameManager.initialbudget += money;
             running = false;
             timeRemaining = TimerMax;
             if (manager == true)
             {
-                RouteClick();
+                gameManager.initialbudget -= moneyfordriver;
+                if (gameManager.initialbudget >= 0)
+                {
+                    RouteClick();
+                }
             }
         }
               
@@ -56,6 +61,8 @@ public class Timer : MonoBehaviour
     public void RouteClick()
     {
         running = true;
+        
+        
     }
 
     float CalculateSliderValue()
@@ -65,7 +72,21 @@ public class Timer : MonoBehaviour
 
     public void OnManagerClick()
     {
-        manager = true;
+        if (gameManager.initialbudget < moneyformanager)
+        {
+            manager = false;
+        }
+
+        if (gameManager.initialbudget > moneyformanager)
+        {
+            manager = true;
+            gameManager.initialbudget -= moneyformanager;
+           
+            RouteClick();
+            
+
+        }
+        
 
     }
 

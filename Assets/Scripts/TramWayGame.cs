@@ -12,15 +12,10 @@ public class TramWayGame : MonoBehaviour
     public double initialbudget = 140;
    // public double currentbudget;
 
-    
-    public void Start()
-    {
-        
-    }
 
     public void Update()
     {
-        BudgetText.text = "Budget: " + initialbudget.ToString();
+        BudgetText.text = "Budget: $" + initialbudget.ToString();
 
     }
 
