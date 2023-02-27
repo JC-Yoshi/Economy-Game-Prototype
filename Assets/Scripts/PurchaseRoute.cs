@@ -11,9 +11,10 @@ public class PurchaseRoute : MonoBehaviour
     [SerializeField] TramWayGame gameManager;
     [SerializeField] GameObject RouteBegin;
     [SerializeField] GameObject Manager;
-    [SerializeField] GameObject Slider;
+    [SerializeField] GameObject TimerSlider;
     [SerializeField] GameObject PurchaseRouteButton;
     [SerializeField] GameObject Buses;
+    [SerializeField] GameObject TimerText;
 
     public bool Purchased = false;
     
@@ -24,9 +25,10 @@ public class PurchaseRoute : MonoBehaviour
     void Start()
     {
         Manager.SetActive(false);
-        Slider.SetActive(false); 
+        TimerSlider.SetActive(false); 
         RouteBegin.SetActive(false);
         Buses.SetActive(false);
+        TimerText.SetActive(false);
     }
 
     void Update()
@@ -36,8 +38,9 @@ public class PurchaseRoute : MonoBehaviour
         {
             RouteBegin.SetActive(true);
             Manager.SetActive(true);
-            Slider.SetActive(true);
+            TimerSlider.SetActive(true);
             Buses.SetActive(true);
+            TimerText.SetActive(true);
             PurchaseRouteButton.SetActive(false);
             
         }
@@ -46,8 +49,9 @@ public class PurchaseRoute : MonoBehaviour
         {
             RouteBegin.SetActive(false);
             Manager.SetActive(false);
-            Slider.SetActive(false);
+            TimerSlider.SetActive(false);
             Buses.SetActive(false);
+            TimerText.SetActive(false);
         }
     }
 
