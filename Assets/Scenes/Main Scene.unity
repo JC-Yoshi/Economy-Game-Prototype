@@ -443,6 +443,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: money
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: busCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: busUpkeep
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
       propertyPath: BudgetText
       value: 
       objectReference: {fileID: 795020202}
@@ -637,6 +649,209 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8518760070388260450, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
   m_PrefabInstance: {fileID: 1137252987}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1566279625
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1836198416}
+    m_Modifications:
+    - target: {fileID: 5548901243090439037, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_Text
+      value: Bus Route (TITLE)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243339006779, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243354956259, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_Text
+      value: 'Purchase Route:
+
+        $250'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243499265599, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243499265599, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: money
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: busCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: TimerMax
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: busUpkeep
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: BudgetText
+      value: 
+      objectReference: {fileID: 795020202}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 607477082}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: moneyfordriver
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243668416101, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: moneyformanager
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901243700494502, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_Name
+      value: Slider
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244197113389, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244224287268, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_Text
+      value: 'Route Begin:
+
+        $400 income'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244558489218, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058738, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_Name
+      value: BusRoute2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 502.3022
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 95.7652
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -690
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901245018255269, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: TimerText
+      value: 
+      objectReference: {fileID: 1566279627}
+    - target: {fileID: 5548901245018255269, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: routecost
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548901245018255269, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: BudgetText
+      value: 
+      objectReference: {fileID: 795020202}
+    - target: {fileID: 5548901245018255269, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 607477082}
+    - target: {fileID: 8359717099409903801, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+      propertyPath: m_Text
+      value: 'Manager:
+
+        $300
+
+        $70 per stop'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+--- !u!224 &1566279626 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5548901244670058741, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+  m_PrefabInstance: {fileID: 1566279625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1566279627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8518760070388260450, guid: 0613bd0e636a86c408bbd72134efbf72, type: 3}
+  m_PrefabInstance: {fileID: 1566279625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1836198415
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +887,7 @@ RectTransform:
   - {fileID: 607477081}
   - {fileID: 795020201}
   - {fileID: 894178390}
+  - {fileID: 1566279626}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
