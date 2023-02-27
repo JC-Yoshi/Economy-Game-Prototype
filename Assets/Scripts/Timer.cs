@@ -7,35 +7,44 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField] TramWayGame gameManager;
+
+    //Timer
     [SerializeField] public float timeRemaining;
     [SerializeField] private float TimerMax;
     [SerializeField] private float TimerMaxDefault;
-    [SerializeField] private Slider slider;
+    [SerializeField] private Slider Timerslider;
+    [SerializeField] Text TimerText;
+    [SerializeField] Timer timer;
+        //Route for timer
+    [SerializeField] private Button RouteBeginButton;
+    public bool running = false;
+
+    //Manager
     [SerializeField] private Button managerButton;
+    public bool manager = false;
+
+    //Purchase Buses
     [SerializeField] private double busCost;
     [SerializeField] private double busCostDefault;
     [SerializeField] private double busUpkeep;
     [SerializeField] private float numberbuses;
-    
-
     [SerializeField] private Slider BusNumslider;
     float previousvalue;
-    //private GameObject bus;
-
-    [SerializeField] Timer timer;
-    [SerializeField] TramWayGame gameManager;
 
     private bool Extrabus = false;
-    //private State timerComplete;
+    
 
 
-
+    //Money or Income
     public Text BudgetText;
-    [SerializeField] double money;
-    [SerializeField] double moneyformanager;
-    [SerializeField] double moneyfordriver;
-    public bool running = false;
-    public bool manager = false;
+    [SerializeField] double money;            //income
+    [SerializeField] double moneyformanager;  //once off purchase
+    [SerializeField] double moneyfordriver;   //Manager Upkeep
+
+    //Ongoing Bools
+    
+    
 
 
     public void Start()
@@ -43,13 +52,22 @@ public class Timer : MonoBehaviour
         TimerMaxDefault = TimerMax;
         busCostDefault = busCost;
         previousvalue = BusNumslider.value;
-        numberbuses = slider.value;
+        numberbuses = Timerslider.value;
         timeRemaining = TimerMax;
     }
     public void Update()
     {
         //timer
-        slider.value = CalculateSliderValue();
+        Timerslider.value = CalculateSliderValue();
+        
+        //Time countdown 
+
+        int minutes = (int)timeRemaining / 60;
+        int seconds = (int)timeRemaining % 60;
+
+        string timeString = string.Format("{0:00}:{1:00}", minutes, seconds);
+        TimerText.text = timeString;
+        //Debug.Log(timeString);
 
         if (timeRemaining <= 0)
         {
@@ -76,6 +94,12 @@ public class Timer : MonoBehaviour
         if (running == true)
         {
             timeRemaining -= Time.deltaTime;
+            RouteBeginButton.interactable = false; 
+        }
+
+        if (running == false)
+        {
+            RouteBeginButton.interactable = true;
         }
 
         if (BusNumslider.value == 1)
@@ -83,10 +107,12 @@ public class Timer : MonoBehaviour
             numberbuses = (BusNumslider.value);
             TimerMax = TimerMaxDefault;
             busCost = busCostDefault;
-            Debug.Log("TimerMax = Default");
+            
         }
     }
 
+
+    //Route Begin
     public void RouteClick()
     {
         running = true;
@@ -101,17 +127,17 @@ public class Timer : MonoBehaviour
         else if (gameManager.initialbudget < busCost)
         {
             Extrabus = false;
-
         }
-
-
+          
     }
 
+    //timer slider value
     float CalculateSliderValue()
     {
         return (timeRemaining / TimerMax);
     }
 
+    //manager button click
     public void OnManagerClick()
     {
         if (gameManager.initialbudget < moneyformanager)
@@ -126,11 +152,11 @@ public class Timer : MonoBehaviour
             managerButton.interactable = false;
             RouteClick();
 
-
         }
 
-
     }
+
+    //Buses Slider Values
     public void BusSlider()
     {
         if (previousvalue < BusNumslider.value && BusNumslider.value != 0)
@@ -158,7 +184,7 @@ public class Timer : MonoBehaviour
             {
                 if (gameManager.initialbudget >= busCost)
                 {
-                Debug.Log("previous value > BusSliderValue");
+                
                     TimerMax += (previousvalue - BusNumslider.value);
                     numberbuses = (BusNumslider.value);
                     busCost /= numberbuses;
