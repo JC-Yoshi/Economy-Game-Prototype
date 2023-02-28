@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager.Requests;
+//using Unity.VisualScripting;
+//using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,6 +28,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private double busCost;
     [SerializeField] private double busCostDefault;
     [SerializeField] private double busUpkeep;
+    [SerializeField] private double busUpkeepDefault;
     [SerializeField] private float numberbuses;
     [SerializeField] private Slider BusNumslider;
     float previousvalue;
@@ -51,6 +52,7 @@ public class Timer : MonoBehaviour
     {
         TimerMaxDefault = TimerMax;
         busCostDefault = busCost;
+        busUpkeepDefault = busUpkeep;
         previousvalue = BusNumslider.value;
         numberbuses = Timerslider.value;
         timeRemaining = TimerMax;
@@ -124,9 +126,10 @@ public class Timer : MonoBehaviour
 
         }
 
-        else if (gameManager.initialbudget < busCost)
+        else if (gameManager.initialbudget < busUpkeep)
         {
             Extrabus = false;
+            BusNumslider.value = 1;
         }
           
     }
@@ -143,6 +146,7 @@ public class Timer : MonoBehaviour
         if (gameManager.initialbudget < moneyformanager)
         {
             manager = false;
+            
         }
 
         if (gameManager.initialbudget > moneyformanager)
@@ -159,13 +163,13 @@ public class Timer : MonoBehaviour
     //Buses Slider Values
     public void BusSlider()
     {
-        if (previousvalue < BusNumslider.value && BusNumslider.value != 0)
+        if (previousvalue < BusNumslider.value && BusNumslider.value != 1)
         {
             if (gameManager.initialbudget >= busCost)
             {
                 TimerMax += (previousvalue - BusNumslider.value);
                 numberbuses = (BusNumslider.value);
-                busCost *= numberbuses;
+                busUpkeep *= numberbuses;
                 gameManager.initialbudget -= busCost;
                 Extrabus = true;
             }
@@ -180,7 +184,7 @@ public class Timer : MonoBehaviour
 
 
 
-            if (previousvalue > BusNumslider.value && BusNumslider.value != 0)
+            if (previousvalue > BusNumslider.value && BusNumslider.value != 1)
             {
                 if (gameManager.initialbudget >= busCost)
                 {
@@ -193,9 +197,11 @@ public class Timer : MonoBehaviour
                     
                 }
 
-                else if (gameManager.initialbudget < busCost)
+                else if (gameManager.initialbudget < busUpkeep)
                 {
                     Extrabus = false;
+                    busUpkeep = busUpkeepDefault;
+                    BusNumslider.value = 1;
                 }
             }
             

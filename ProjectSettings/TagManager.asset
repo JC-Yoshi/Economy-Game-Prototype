@@ -42,3 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Title
+    uniqueID: 1046246829
+    locked: 0
+  - name: Route
+    uniqueID: 2626390055
+    locked: 0
+  - name: Parallax
+    uniqueID: 4240887799
+    locked: 0
+  - name: Background
+    uniqueID: 2365463747
+    locked: 0
