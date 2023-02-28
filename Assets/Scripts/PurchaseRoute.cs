@@ -15,6 +15,8 @@ public class PurchaseRoute : MonoBehaviour
     [SerializeField] GameObject PurchaseRouteButton;
     [SerializeField] GameObject Buses;
     [SerializeField] GameObject TimerText;
+    [SerializeField] GameObject RouteTitle;
+    [SerializeField] GameObject Background;
 
     public bool Purchased = false;
     
@@ -29,6 +31,8 @@ public class PurchaseRoute : MonoBehaviour
         RouteBegin.SetActive(false);
         Buses.SetActive(false);
         TimerText.SetActive(false);
+        RouteTitle.SetActive(false);
+        Background.SetActive(false);
     }
 
     void Update()
@@ -41,6 +45,8 @@ public class PurchaseRoute : MonoBehaviour
             TimerSlider.SetActive(true);
             Buses.SetActive(true);
             TimerText.SetActive(true);
+            RouteTitle.SetActive(true);
+            Background.SetActive(true);
             PurchaseRouteButton.SetActive(false);
             
         }
@@ -52,6 +58,8 @@ public class PurchaseRoute : MonoBehaviour
             TimerSlider.SetActive(false);
             Buses.SetActive(false);
             TimerText.SetActive(false);
+            RouteTitle.SetActive(false);
+            Background.SetActive(false);
         }
     }
 

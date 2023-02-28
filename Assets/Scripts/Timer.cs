@@ -31,6 +31,9 @@ public class Timer : MonoBehaviour
     [SerializeField] private double busUpkeepDefault;
     [SerializeField] private float numberbuses;
     [SerializeField] private Slider BusNumslider;
+
+    [SerializeField] private Text RouteTitle;
+    [SerializeField] private InputField NameInput;
     float previousvalue;
 
     private bool Extrabus = false;
@@ -59,6 +62,11 @@ public class Timer : MonoBehaviour
     }
     public void Update()
     {
+        if(NameInput.text != "")
+        {
+            RouteTitle.text = "Bus Route:  " + NameInput.text;
+
+        }
         //timer
         Timerslider.value = CalculateSliderValue();
         
@@ -109,6 +117,7 @@ public class Timer : MonoBehaviour
             numberbuses = (BusNumslider.value);
             TimerMax = TimerMaxDefault;
             busCost = busCostDefault;
+            busUpkeep = busUpkeepDefault;
             
         }
     }
@@ -191,8 +200,8 @@ public class Timer : MonoBehaviour
                 
                     TimerMax += (previousvalue - BusNumslider.value);
                     numberbuses = (BusNumslider.value);
-                    busCost /= numberbuses;
-                    gameManager.initialbudget -= busCost;
+                    busUpkeep /= numberbuses;
+                    //gameManager.initialbudget -= busCost;
                     Extrabus = true;
                     
                 }
